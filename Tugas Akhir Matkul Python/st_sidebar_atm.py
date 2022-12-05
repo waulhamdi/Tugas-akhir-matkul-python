@@ -4,8 +4,9 @@ import streamlit as st
 
 
 def menu_home():
+    st.image('logo.jpg')
     st.header('PROGRAM ATM TARIK SALDO NASABAH')
-def programmer():
+def menu_programmer():
     st.info('KELOMPOK 3')
     st.subheader('Afif Vito Fadlurohman')
     st.subheader('Muhammad Taufik Hidayat')
@@ -20,12 +21,9 @@ def menu():
 
   if (pilih=='Home'):
     menu_home()
-  
   elif (pilih=='Programmer'):
     menu_programmer()
 
-
-    
 
 def main():
   menu()
