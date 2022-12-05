@@ -4,7 +4,7 @@ import streamlit as st
 
 
 def menu_home():
-    st.image('logo.jpg')
+    st.image('image/logo.jpg')
     st.header('PROGRAM ATM TARIK SALDO NASABAH')
 def menu_programmer():
     st.info('KELOMPOK 3')
