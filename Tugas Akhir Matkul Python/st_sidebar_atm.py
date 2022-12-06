@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-
+import st_lihat_saldo_nasabah
 
 def menu_home():
     st.image('image/logo.jpg')
@@ -23,6 +23,8 @@ def menu():
     menu_home()
   elif (pilih=='Programmer'):
     menu_programmer()
+  elif (pilih=='Lihat saldo nasabah'):
+    st_lihat_saldo_nasabah.Lihat()
 
 
 def main():
