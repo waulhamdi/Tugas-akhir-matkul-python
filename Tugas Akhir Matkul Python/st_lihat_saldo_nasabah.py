@@ -32,12 +32,14 @@ def Lihat():
         xnorek = st.text_input('Input No rekening')
         view = st.button('Preview')
         if(view):
-            if(view==xnorek):
+            if(view==''):
+                st.error('Masukan No rekening')
+            else:
                 conn = st_koneksi.koneksi()
-                sql = "select * from barang where no_rekening = '%s'" %xnorek
+                sql = "select * from tb_nasabah where no_rekening = '%s'" %xnorek
                 mycursor = conn.cursor()    #siapkan data
                 mycursor.execute(sql)     #jalankan var sql 
-                dataku = mycursor.fetchall()    #ambil data
+                data = mycursor.fetchall()    #ambil data
                 
                 # looping
                 nomor =0
@@ -54,19 +56,19 @@ def Lihat():
                     xsaldo = dt[3]
 
                     st.write(f'{nomor}.{xnorek},{xname},{xpin},{xsaldo}')
-            else:
-                st.error('No rekening tidak valid')
-                st.snow()
+                    st.snow()
     else:
         xpin = st.text_input("Input No PIN")
         view = st.button('Preview')
         if(view):
-            if(view==xnorek):
+            if(view==''):
+                st.error('Masukan PIN ATM Anda')
+            else:
                 conn = st_koneksi.koneksi()
-                sql = "select * from barang where no_rekening = '%s'" %xnorek
+                sql = "select * from tb_nasabah where pin_atm = '%s'" %xpin
                 mycursor = conn.cursor()    #siapkan data
                 mycursor.execute(sql)     #jalankan var sql 
-                dataku = mycursor.fetchall()    #ambil data
+                data = mycursor.fetchall()    #ambil data
                 
                 # looping
                 nomor =0
@@ -83,9 +85,7 @@ def Lihat():
                     xsaldo = dt[3]
 
                     st.write(f'{nomor}.{xnorek},{xname},{xpin},{xsaldo}')
-            else:
-                st.error('No rekening tidak valid')
-                st.snow()
+                    st.snow()
         
+                conn.close()
         
-            connect.close()

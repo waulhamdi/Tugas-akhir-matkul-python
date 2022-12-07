@@ -2,6 +2,7 @@ import streamlit as st
 
 
 import st_lihat_saldo_nasabah
+import st_saldo_nasabah_pdf
 
 def menu_home():
     st.image('image/logo.jpg')
@@ -13,18 +14,22 @@ def menu_programmer():
     st.subheader('Muhammad Liwaul Hamdi')
     st.subheader('Ricki Agustin')
 def menu():
-  with st.sidebar:
-    pilih = st.selectbox('Menu Barang',['Home','Programmer'\
-        ,'Input Nasabah','Edit Nasabah','Delete Nasabah','-----Transaksi------'\
-        ,'ATM ambil uang','ATM hapus transaksi','----Laporan----','Lihat saldo nasabah'\
-        ,'Print saldo nasabah PDF','Lihat transaksi tarik saldo'])
+	
+	with st.sidebar:
+		st.image('image/computer.png', width=100)
+		pilih = st.selectbox('MENU ATM TARIK SALDO',['Home','Programmer'\
+			,'Input Nasabah','Edit Nasabah','Delete Nasabah','-----Transaksi------'\
+			,'ATM ambil uang','ATM hapus transaksi','----Laporan----','Lihat saldo nasabah'\
+			,'Print saldo nasabah PDF','Lihat transaksi tarik saldo'])
 
-  if (pilih=='Home'):
-    menu_home()
-  elif (pilih=='Programmer'):
-    menu_programmer()
-  elif (pilih=='Lihat saldo nasabah'):
-    st_lihat_saldo_nasabah.Lihat()
+	if (pilih=='Home'):
+		menu_home()
+	elif (pilih=='Programmer'):
+		menu_programmer()
+	elif (pilih=='Lihat saldo nasabah'):
+		st_lihat_saldo_nasabah.Lihat()
+	elif (pilih=='Print saldo nasabah PDF'):
+		st_saldo_nasabah_pdf
 
 
 def main():
