@@ -17,7 +17,7 @@ def Lihat():
         nomor =0
         ttl=0
         st.warning('SEMUA NASABAH')
-        st.write('No - No Rekening - Nama Nasabah - PIN ATM - Saldo')
+        st.write('No - No Rekening - Nama Nasabah - PIN ATM - Saldo - Alamat')
         st.write('=================')
 
         for dt in data:
@@ -26,13 +26,14 @@ def Lihat():
             xname = dt[1]
             xpin = dt[2]
             xsaldo = dt[3]
+            xalamat = dt[4]
 
-            st.write(f'{nomor}.{xnorek},{xname},{xpin},{xsaldo}')
+            st.write(f'{nomor}.{xnorek},{xname},{xpin},{xsaldo},{xalamat}')
     elif genre == 'By no rekening':
         xnorek = st.text_input('Input No rekening')
         view = st.button('Preview')
         if(view):
-            if(view==''):
+            if(xnorek==''):
                 st.error('Masukan No rekening')
             else:
                 conn = st_koneksi.koneksi()
@@ -45,7 +46,7 @@ def Lihat():
                 nomor =0
                 ttl=0
                 st.warning('By no Rekening')
-                st.write('No - No Rekening - Nama Nasabah - PIN ATM - Saldo')
+                st.write('No - No Rekening - Nama Nasabah - PIN ATM - Saldo - Alamat')
                 st.write('=================')
 
                 for dt in data:
@@ -54,14 +55,15 @@ def Lihat():
                     xname = dt[1]
                     xpin = dt[2]
                     xsaldo = dt[3]
+                    xalamat = dt[4]
 
-                    st.write(f'{nomor}.{xnorek},{xname},{xpin},{xsaldo}')
+                    st.write(f'{nomor}.{xnorek},{xname},{xpin},{xsaldo},{xalamat}')
                     st.snow()
     else:
         xpin = st.text_input("Input No PIN")
         view = st.button('Preview')
         if(view):
-            if(view==''):
+            if(xpin==''):
                 st.error('Masukan PIN ATM Anda')
             else:
                 conn = st_koneksi.koneksi()
@@ -74,7 +76,7 @@ def Lihat():
                 nomor =0
                 ttl=0
                 st.warning('By No Pin')
-                st.write('No - No Rekening - Nama Nasabah - PIN ATM - Saldo')
+                st.write('No - No Rekening - Nama Nasabah - PIN ATM - Saldo - Alamat')
                 st.write('=================')
 
                 for dt in data:
@@ -83,8 +85,9 @@ def Lihat():
                     xname = dt[1]
                     xpin = dt[2]
                     xsaldo = dt[3]
+                    xalamat = dt[4]
 
-                    st.write(f'{nomor}.{xnorek},{xname},{xpin},{xsaldo}')
+                    st.write(f'{nomor}.{xnorek},{xname},{xpin},{xsaldo},{xalamat}')
                     st.snow()
         
                 conn.close()

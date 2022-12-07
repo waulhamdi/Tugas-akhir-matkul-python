@@ -127,7 +127,7 @@ def Print_PDF():
             st.warning('OK, File sudah diprint, Silahkan buka explorer')
     else:
         st.info ('PRINT DATA NASABAH KE PDF')
-        pin = st.text_input('Input No Rekening')
+        pin = st.text_input('Input PIN ATM')
         cek = st.button('Print PDF')
         if(cek):
             

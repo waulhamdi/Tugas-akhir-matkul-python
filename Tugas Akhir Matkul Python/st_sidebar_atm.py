@@ -1,6 +1,8 @@
 import streamlit as st
 
-
+import st_input_nasabah
+import st_update_nasabah
+import st_delete_nasabah
 import st_lihat_saldo_nasabah
 import st_saldo_nasabah_pdf
 import st_lihat_transaksi
@@ -27,6 +29,12 @@ def menu():
 		menu_home()
 	elif (pilih=='Programmer'):
 		menu_programmer()
+	elif (pilih=='Input Nasabah'):
+		st_input_nasabah.Input()
+	elif (pilih=='Edit Nasabah'):
+		st_update_nasabah.Update()
+	elif (pilih=='Delete Nasabah'):
+		st_delete_nasabah.Delete()
 	elif (pilih=='Lihat saldo nasabah'):
 		st_lihat_saldo_nasabah.Lihat()
 	elif (pilih=='Print saldo nasabah PDF'):
