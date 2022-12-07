@@ -3,6 +3,7 @@ import streamlit as st
 
 import st_lihat_saldo_nasabah
 import st_saldo_nasabah_pdf
+import st_lihat_transaksi
 
 def menu_home():
     st.image('image/logo.jpg')
@@ -29,7 +30,9 @@ def menu():
 	elif (pilih=='Lihat saldo nasabah'):
 		st_lihat_saldo_nasabah.Lihat()
 	elif (pilih=='Print saldo nasabah PDF'):
-		st_saldo_nasabah_pdf
+		st_saldo_nasabah_pdf.Print_PDF()
+	else:
+		st_lihat_transaksi.Lihat_Transaksi()
 
 
 def main():
